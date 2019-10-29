@@ -10,7 +10,7 @@
 
 <hr>
 
-<h3>Office Locations</h3>
+<h3>Offices</h3>
 
 <table class="ts">
   <tr>
@@ -18,26 +18,26 @@
     <th>Zip Code</th>
     <th>Phone</th>
   </tr>
-  <% @physician.offices.each do |office|%>
+  <% @physician.offices.each do |o|%>
     <tr>
-      <td><%= office.street_address %></td>
-      <td><%= office.zip %></td>
-      <td><%= office.phone %></td>
+      <td><%= o.street_address %></td>
+      <td><%= o.zip %></td>
+      <td><%= o.phone %></td>
     </tr>
   <% end %>
 </table>
 
-<h3>Current Appointmentss</h3>
+<h3>Current Appointments</h3>
 
 <table class="ts">
   <tr>
     <th>Patient Name</th>
     <th>Date of Appointment</th>
   </tr>
-  <% @physician.appointments.each do |appointment|%>
+  <% @physician.appointments.each do |a|%>
     <tr>
-      <td><%= appointment.patient.name %></td>
-      <td><%= appointment.visit.to_formatted_s(:long_ordinal) %></td>
+      <td><%= a.patient.name %></td>
+      <td><%= a.visit.to_formatted_s(:long_ordinal) %></td>
     </tr>
   <% end %>
 </table>
