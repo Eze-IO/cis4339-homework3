@@ -1,0 +1,20 @@
+// Place all the styles related to the Physicians controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ts {
+    border-collapse: collapse;
+    background-color: #EEEEEE;
+    margin-bottom: 10px;
+ }
+ .ts td, .ts th {
+    text-align: left;
+    border: 1px solid #AAAAAA;
+    padding: 3px;
+ }
+ .ts th {
+    font-weight: bold;
+ }
+ .ts tr:nth-child(even) {
+    background-color: lightblue;
+ }

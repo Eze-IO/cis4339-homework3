@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h2><%= @physician.name %><h2>
+</p>
+
+<p>
+  <h3>Specialty: <%= @physician.specialty %></h3>
+</p>
+
+<hr>
+
+<h3>Office Locations</h3>
+
+<table class="ts">
+  <tr>
+    <th>Street Address</th>
+    <th>Zip Code</th>
+    <th>Phone</th>
+  </tr>
+  <% @physician.offices.each do |office|%>
+    <tr>
+      <td><%= office.street_address %></td>
+      <td><%= office.zip %></td>
+      <td><%= office.phone %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h3>Current Appointmentss</h3>
+
+<table class="ts">
+  <tr>
+    <th>Patient Name</th>
+    <th>Date of Appointment</th>
+  </tr>
+  <% @physician.appointments.each do |appointment|%>
+    <tr>
+      <td><%= appointment.patient.name %></td>
+      <td><%= appointment.visit.to_formatted_s(:long_ordinal) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Edit', edit_physician_path(@physician) %> |
+<%= link_to 'Back', physicians_path %>
